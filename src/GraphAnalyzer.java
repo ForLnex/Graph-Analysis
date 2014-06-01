@@ -1,3 +1,6 @@
+import DataStructures.Node;
+import DataStructures.DependencyData;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
@@ -8,10 +11,23 @@ import java.util.Set;
 public class GraphAnalyzer{
 	public final Node		ROOT;
 	private List<String>	cyclesFound;
+	private HashMap<Node, HashSet<Node>> dependencies;
 
 	public GraphAnalyzer(Node root){
 		this.ROOT = root;
 	}
+
+	public List<DependencyData> getDependencies(){
+		if(dependencies == null)
+			findDependencies();
+		return dependencyList();	
+	}
+
+	private List<DependencyData> dependencyList(){
+		List<DependencyData> dependencyList = new ArrayList<DependencyData>();
+
+	}
+
 
 	public List<String> getCycles(){
 		if (this.cyclesFound == null)
