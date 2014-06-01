@@ -1,3 +1,7 @@
+package DataStructures;
+
+import java.util.List;
+
 public interface DependencyData{
 	public Node getParentNode();
 
